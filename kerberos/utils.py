@@ -3,6 +3,7 @@ from datetime import datetime
 
 UPDATE_TIMEOUT = 5
 TIME_TO_LIVE_SESSION_KEY = 10 ** 6
+TIME_TO_LIVE_TGS_TICKET = 60
 
 TIME_FORMAT = '%Y-%m-%d %H:%M:%S'
 max_allowed_time_difference = 10 * 60
