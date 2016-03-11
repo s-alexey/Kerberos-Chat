@@ -14,6 +14,7 @@ setup_args = {
           'tornado',
           'pycrypto',
           'mongoengine',
+          'secretsharing',
       ],
 }
 
