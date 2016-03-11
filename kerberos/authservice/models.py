@@ -11,7 +11,7 @@ class Record(Document):
         'abstract': True,
     }
     name = StringField(unique=True)
-    key = StringField()
+    key = StringField(required=True)
 
     def __str__(self):
         return self.name

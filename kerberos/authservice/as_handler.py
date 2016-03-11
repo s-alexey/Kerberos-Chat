@@ -26,7 +26,7 @@ class AuthenticationServer(tornado.web.RequestHandler):
 
     def post(self):
 
-        if self.request.body:
+        if not self.request.arguments:
             dump = self.request.body.decode()
             request = json.loads(dump)
             login = request.get('login', '')
@@ -41,7 +41,7 @@ class AuthenticationServer(tornado.web.RequestHandler):
         try:
             self.user = User.objects.get(name=login)
         except User.DoesNotExist:
-            self.send_error(status_code=400, reason="Login with such login doesn't exist.")
+            self.send_error(status_code=400, reason="User with such login doesn't exist.")
             return
 
         decrypted_json = crypto.decrypt_json(encrypted, self.user.key)

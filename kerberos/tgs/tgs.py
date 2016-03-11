@@ -32,7 +32,7 @@ class TicketGrantingService(tornado.web.RequestHandler):
 
     def post(self):
 
-        if self.request.body:
+        if not self.request.arguments:
             dump = self.request.body.decode()
             request = json.loads(dump)
             authenticator = request.get('authenticator', '')
