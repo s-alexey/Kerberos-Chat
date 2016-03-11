@@ -2,4 +2,4 @@ mongoengine==0.10.6
 pycrypto==2.6.1
 pymongo==3.2.1
 tornado==4.3
-secretsharing
+git+https://github.com/blockstack/secret-sharing
