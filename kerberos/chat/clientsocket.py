@@ -252,9 +252,3 @@ class ChatClientSocket(tornado.websocket.WebSocketHandler):
         # TODO add sensible checker here
         self.previous_timestamp = new_timestamp
         return True
-
-
-def get_app():
-    return tornado.web.Application([
-        (r'/path/to/websocket', ChatClientSocket)
-    ])

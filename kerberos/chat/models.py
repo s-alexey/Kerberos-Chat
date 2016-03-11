@@ -11,14 +11,6 @@ db_url = os.getenv("CHAT_DB_URL", "chat")
 connect(db_url)
 
 
-class UserData(EmbeddedDocument):
-    key = StringField()
-    data = StringField()
-
-    def __str__(self):
-        return self.key
-
-
 class ChatUser(Document):
     name = StringField(unique=True)
     data = DictField()
@@ -109,5 +101,3 @@ class Room(Document):
     def pop_user_share(self, user):
         self.secret_shares.pop(user, None)
         self.is_available()
-
-

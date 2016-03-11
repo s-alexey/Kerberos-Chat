@@ -207,10 +207,10 @@ def make_app():
 
     class ChatApplication(tornado.web.Application):
         def __init__(self):
-            self.chat = ChatServer
+            self.chat = ChatServer()
             handlers = (
                 (r'/chat', ChatClientSocket),
             )
-            super()(handlers)
+            tornado.web.Application.__init__(self, handlers)
 
     return ChatApplication()
